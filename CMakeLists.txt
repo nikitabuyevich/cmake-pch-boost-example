@@ -14,11 +14,11 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     # Let's ensure -std=c++xx instead of -std=g++xx
     set(CMAKE_CXX_EXTENSIONS OFF)
 
-    #    # Testing only available if this is the main app
-    #    # Note this needs to be done in the main CMakeLists
-    #    # since it calls enable_testing, which must be in the
-    #    # main CMakeLists.
-    #    include(CTest)
+    # Testing only available if this is the main app
+    # Note this needs to be done in the main CMakeLists
+    # since it calls enable_testing, which must be in the
+    # main CMakeLists.
+    include(CTest)
 
     # Docs only available if this is the main app
     find_package(Doxygen)
@@ -44,12 +44,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fmtlib)
 
+# Testing library
+FetchContent_Declare(
+        catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v2.9.1
+)
+FetchContent_MakeAvailable(catch2)
+# Adds Catch2::Catch2
+
 # Make external libraries and libraries globally available.
 add_subdirectory(pkg)
 
 # Create the targets for the entire example-app.
 add_subdirectory(app)
 
-## Testing only available if this is the main app
-#    add_subdirectory(tests)
-#endif ()

@@ -1,3 +1,3 @@
 #include <string>
 
-int convert(const std::string &str) noexcept;
+int auga(const std::string &str) noexcept;

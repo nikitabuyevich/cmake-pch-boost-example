@@ -16,3 +16,5 @@ target_compile_features(foobar PUBLIC cxx_std_17)
 
 add_library(foo::bar ALIAS foobar)
 
+add_subdirectory(tests)
+
