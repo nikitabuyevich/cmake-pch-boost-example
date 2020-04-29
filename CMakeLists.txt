@@ -14,6 +14,9 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     # Let's ensure -std=c++xx instead of -std=g++xx
     set(CMAKE_CXX_EXTENSIONS OFF)
 
+    # Disable extra targets that CTest creates
+    set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1)
+
     # Testing only available if this is the main app
     # Note this needs to be done in the main CMakeLists
     # since it calls enable_testing, which must be in the
