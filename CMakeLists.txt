@@ -39,32 +39,6 @@ if (${CMAKE_VERSION} VERSION_LESS 3.14)
     include(cmake/add_FetchContent_MakeAvailable.cmake)
 endif ()
 
-
-set(BOOST_VERSION 1.72.0)
-
-# Settings for finding correct Boost libraries.
-set(Boost_USE_STATIC_LIBS FALSE)
-set(Boost_USE_MULTITHREADED TRUE)
-set(Boost_USE_STATIC_RUNTIME FALSE)
-set(Boost_COMPILER "-vc142")
-
-set(Boost_ADDITIONAL_VERSIONS "${BOOST_VERSION}")
-
-
-# Accumulator library
-# This is header only, so could be replaced with git submodules or FetchContent
-#find_package(Boost ${BOOST_VERSION} EXACT REQUIRED)
-# Search for Boost libraries.
-find_package(Boost ${BOOST_VERSION} EXACT REQUIRED)
-# Adds Boost::boost
-
-# Make found targets globally available.
-if (Boost_FOUND)
-    set_target_properties(Boost::boost
-            PROPERTIES IMPORTED_GLOBAL TRUE)
-endif ()
-
-
 # Formatting library
 FetchContent_Declare(
         fmtlib
