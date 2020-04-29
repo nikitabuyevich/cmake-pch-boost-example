@@ -12,11 +12,17 @@
 // Windows Header Files
 #include <windows.h>
 
+// Common
 #include <vector>
+#include <iostream>
 #include <tuple>
 #include <string>
 #include <algorithm>
 
-#include <iostream>
+// Boost
+#include <boost/accumulators/accumulators.hpp>
+#include <boost/accumulators/statistics/stats.hpp>
+#include <boost/accumulators/statistics/mean.hpp>
+#include <boost/accumulators/statistics/moment.hpp>
 
 #endif //PCH_H

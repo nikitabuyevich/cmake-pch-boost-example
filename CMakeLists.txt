@@ -32,29 +32,23 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     endif ()
 endif ()
 
-# FetchContent added in CMake 3.11, downloads during the configure step
+# Fetch Content
 include(FetchContent)
-# FetchContent_MakeAvailable was not added until CMake 3.14
-if (${CMAKE_VERSION} VERSION_LESS 3.14)
-    include(cmake/add_FetchContent_MakeAvailable.cmake)
-endif ()
-
 # Formatting library
 FetchContent_Declare(
         fmtlib
         GIT_REPOSITORY https://github.com/fmtlib/fmt.git
         GIT_TAG 5.3.0
 )
-FetchContent_MakeAvailable(fmtlib)
-
 # Testing library
 FetchContent_Declare(
         catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
         GIT_TAG v2.9.1
 )
-FetchContent_MakeAvailable(catch2)
-# Adds Catch2::Catch2
+
+# Adds fmtlib Catch2::Catch2 to the global scope
+FetchContent_MakeAvailable(fmtlib catch2)
 
 # Make external libraries and libraries globally available.
 add_subdirectory(pkg)

@@ -1,14 +1,13 @@
 #include <iostream>
 #include <fmt/format.h>
-#include <foobar.h>
+#include <foobar/foobar.h>
 
 int main() {
   std::cout << "Hello, World!" << std::endl;
-  fmt::print("Meanie: {}, Moment: {}\n", 1, 2);
-  fmt::print("REEEEEE2\n");
-  fmt::print("Yay {}\n", auga("ree"));
+  fmt::print("Stuff\n");
+  fmt::print("Yay {}\n", auga("..."));
 
-  std::vector<double> input = {1.2, 2.3, 3.4, 4.5};
+  std::vector<double> input = {1.3, 2.3, 3.4, 4.5};
 
   auto[mean, moment] = accumulate_vector(input);
 

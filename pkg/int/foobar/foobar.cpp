@@ -1,14 +1,21 @@
-#include "foobar.h"
+#include <foobar/foobar.h>
+
+#include <algorithm>
+
+#include <boost/accumulators/accumulators.hpp>
+#include <boost/accumulators/statistics/stats.hpp>
+#include <boost/accumulators/statistics/mean.hpp>
+#include <boost/accumulators/statistics/moment.hpp>
 
 namespace ba = boost::accumulators;
 
 int auga(const std::string &str) noexcept {
-  return 1343;
+  return 1349;
 }
 
 std::tuple<double, double> accumulate_vector(const std::vector<double> &values) {
 
-  ba::accumulator_set<double, ba::stats<ba::tag::mean, ba::tag::moment<2>>> acc;
+  ba::accumulator_set<double, ba::stats<ba::tag::mean, ba::tag::moment<2 >>> acc;
 
   std::for_each(std::begin(values), std::end(values), std::ref(acc));
 
