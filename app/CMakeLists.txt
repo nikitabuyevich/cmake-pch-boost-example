@@ -1,9 +1,9 @@
-add_executable(mvbuild src/main.cpp)
+add_executable(CMakeBoostLibPCH src/main.cpp)
 
-target_compile_features(mvbuild PRIVATE cxx_std_17)
+target_compile_features(CMakeBoostLibPCH PRIVATE cxx_std_17)
 
-target_link_libraries(mvbuild PRIVATE foo::bar fmt::fmt)
+target_link_libraries(CMakeBoostLibPCH PRIVATE foo::bar fmt::fmt)
 
 # Add precompiled headers
 # Reuse foobar's precompile headers
-target_precompile_headers(mvbuild REUSE_FROM foobar)
+target_precompile_headers(CMakeBoostLibPCH REUSE_FROM foobar)

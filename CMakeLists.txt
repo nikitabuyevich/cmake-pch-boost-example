@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(mvbuild
+project(CMakeBoostLibPCH
         VERSION 1.0
-        DESCRIPTION "Kill a process and copy the contents of a file to another location."
+        DESCRIPTION "Example of a CMake with Boost, internal library, and PCH setup."
         LANGUAGES CXX)
 
 # Only do these if this is the main project, and not if it is included through add_subdirectory

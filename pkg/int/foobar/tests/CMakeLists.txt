@@ -1,4 +1,3 @@
-
 # Tests need to be added as executables first
 add_executable(test_foobar foobar_test.cpp)
 
