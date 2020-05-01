@@ -5,3 +5,5 @@
 - Visual Studio as the compiler
 - Boost 1.72.0
 - CLion 2020.1
+
+Example of a project using this template: https://github.com/nikitabuyevich/mvbuild
